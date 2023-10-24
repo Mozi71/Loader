@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://mozi71-loader.oss-cn-shanghai.aliyuncs.com/static/favicon.ico">
+    <title>Master</title>
+    <script src="https://mozi71-loader.oss-cn-shanghai.aliyuncs.com/static/js/jquery-3.7.0.min.js"></script>
+    <link rel="stylesheet" href="https://mozi71-loader.oss-cn-shanghai.aliyuncs.com/static/css/customize.css">
+    <style>
+        div#outer{
+            background-image: url("https://mozi71-loader.oss-cn-shanghai.aliyuncs.com/static/background/110564615_p0.jpg");
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="inner">
+        <!--跳动文字-->
+        <div id="container">
+            <div>
+                <p id="header"></p>
+            </div>
+        </div>
+        <!--搜索框-->
+        <div id="search">
+            <div>
+                <label for="baidu-search"></label><input id="baidu-search" type="text" value="" onkeypress="search()">
+            </div>
+        </div>
+        <!--应用-->
+        <div id="loader">
+            <div>
+                <table id="loader-table"  cellspacing="15px" cellpadding="5px" align="center" valign="middle">
+                    <tr>
+                        <th><a href = "https://www.majsoul.tw/" target="_blank"><img src="https://mozi71-loader.oss-cn-shanghai.aliyuncs.com/static/logo/QueHun.webp" alt="QueHun"><p>雀魂</p></a></th>
+                        <th><a href = "http://192.168.31.20:5080/" target="_blank"><img src="https://mozi71-loader.oss-cn-shanghai.aliyuncs.com/static/logo/Photos.png" alt="Photos"><p>Photos</p></a></th>
+                        <th><a href = "http://192.168.31.20:8096/" target="_blank"><img src="https://mozi71-loader.oss-cn-shanghai.aliyuncs.com/static/logo/Emby.webp" alt="Emby"><p>Emby</p></a></th>
+                        <th><a href = "https://rsshub.mozi71.top" target="_blank"><img src="https://mozi71-loader.oss-cn-shanghai.aliyuncs.com/static/logo/RSShub.png" alt="RSShub"><p>RSShub</p></a></th>
+                        <th><a href = "http://192.168.31.20:5000/" target="_blank"><img src="https://mozi71-loader.oss-cn-shanghai.aliyuncs.com/static/logo/DiskStation.png" alt="DiskStation"><p>DiskStation</p></a></th>
+                        <th><a href = "https://github.com/" target="_blank"><img src="https://mozi71-loader.oss-cn-shanghai.aliyuncs.com/static/logo/GitHub.webp" alt="GitHub"><p>GitHub</p></a></th>
+                        <th><a href = "https://inftab.com/" target="_blank"><img src="https://mozi71-loader.oss-cn-shanghai.aliyuncs.com/static/logo/Infinity.webp" alt="Infinity"><p>Infinity</p></a></th>
+                    </tr>
+                    <tr>
+                        <th><a href = "http://192.168.31.25:8080/" target="_blank"><img src="https://mozi71-loader.oss-cn-shanghai.aliyuncs.com/static/logo/qbittorrent-tray.svg" alt="qBittorrent"><p>qBittorrent</p></a></th>
+                        <th><a href = "http://192.168.31.3:9090/ui/dashboard/#/proxies?host=192.168.31.3&port=9090&secret=123456" target="_blank"><img src="https://mozi71-loader.oss-cn-shanghai.aliyuncs.com/static/logo/Clash.webp" alt="Clash"><p>Clash</p></a></th>
+                        <th><a href = "http://192.168.31.20:4533/" target="_blank"><img src="https://mozi71-loader.oss-cn-shanghai.aliyuncs.com/static/logo/Navidrome.png" alt="Navidrome"><p>Navidrome</p></a></th>
+                        <th><a href = "https://192.168.31.2/" target="_blank"><img src="https://mozi71-loader.oss-cn-shanghai.aliyuncs.com/static/logo/Esxi.png" alt="Esxi"><p>Esxi</p></a></th>
+                        <th><a href = "http://192.168.31.1/" target="_blank"><img src="https://mozi71-loader.oss-cn-shanghai.aliyuncs.com/static/logo/ikuai.png" alt="iKuai"><p>iKuai</p></a></th>
+                        <th><a href = "http://192.168.31.20:3003/" target="_blank"><img src="https://mozi71-loader.oss-cn-shanghai.aliyuncs.com/static/logo/Nas-tool.png" alt="nas-tool"><p>NAS-Tool</p></a></th>
+                        <th><a href = "http://192.168.31.3/cgi-bin/luci/" target="_blank"><img src="https://mozi71-loader.oss-cn-shanghai.aliyuncs.com/static/logo/OpenWrt.webp" alt="OpenWrt"><p>OpenWrt</p></a></th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    <!--字符跳动-->
+    let flag = 0;
+    $(document).ready(
+        function(){
+            const arr = ["あ", "な", "た", "が", "一", "番", "好", "き", "で", "す","!"];
+            setInterval(function(){
+                let str = "";
+                for(let i = 0; i < flag; i++){
+                    str += arr[i];
+                }
+                if (flag <= 11){
+                    $("p#header").html(str);
+                    flag++;
+                }
+            },400);
+        }
+    );
+    <!--baidu搜索函数-->
+    function search(){
+        const info = document.getElementById("baidu-search").value;
+        if (window.event.keyCode === 13 || event.which ===13) {
+            if (info !== ""){
+                const url="https://www.baidu.com/s?wd=" + info;
+                window.open(url)
+            }
+        }}
+    <!--google搜索函数-->
+    function google_search(){
+        const info = document.getElementById("google-search").value;
+        if (window.event.keyCode === 13) {
+            if (info !== ""){
+                const url="https://www.google.com/search?q=" + info;
+                window.open(url)
+            }
+        }}
+</script>

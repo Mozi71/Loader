@@ -1,0 +1,122 @@
+html {
+    height: 100%;
+    overflow: auto;
+    padding: 0;
+    margin: 0;
+}
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    user-select:none
+}
+div#outer {
+    display: table;
+    height: 100%;
+    width: 100%;
+    /*background-image: url("https://mozi71-loader.oss-cn-shanghai.aliyuncs.com/static/background/110564615_p0.jpg");*/
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+div#inner {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+div#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 500px;
+    max-height: 50px;
+    min-width: 400px;
+    min-height: 50px;
+    /*毛玻璃*/
+    /*backdrop-filter:blur(5px);*/
+    position: absolute;
+    top:60px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius:10px;
+}
+div#loader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    max-width: 765px;
+    max-height: 340px;
+    min-width: 765px;
+    min-height: 340px;
+    position: absolute;
+    top:210px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius:10px;
+    text-shadow:0 0 10px white;
+    /*background-color: grey;*/
+    /*backdrop-filter:blur(1px);*/
+}
+div#search{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 700px;
+    max-height: 50px;
+    min-width: 700px;
+    min-height: 50px;
+    /*毛玻璃*/
+    /*backdrop-filter:blur(1px);*/
+    position: absolute;
+    top:140px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius:10px;
+}
+input#baidu-search{
+    height: 50px ;
+    width: 650px;
+    font-size: x-large;
+    border: none;
+    outline: none;
+    border-radius:10px;
+    opacity:50%;
+    filter:alpha(opacity=80);
+    color: black;
+    font-weight: normal;
+}
+table#loader-table{
+    /*width: 500px;*/
+    /*height: 30px;*/
+    backdrop-filter:blur(0px);
+}
+table#loader-table img{
+    width: 80px;
+    height: 80px;
+    border-radius:20px;
+    /*background-color: white;*/
+    /*backdrop-filter:blur(20px);*/
+
+}
+table#loader-table a{
+    text-decoration:none;
+    color:black;
+    font-size: 15px;
+    font-family: "Microsoft YaHei UI";
+    font-weight: bold;
+    font-variant: normal;
+
+}
+p#header {
+    font-family: Roboto-Medium;
+    font-size:40px;
+    color: black;
+    text-align: center;
+    text-shadow:0 0 5px skyblue;
+    line-height: 50px;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
